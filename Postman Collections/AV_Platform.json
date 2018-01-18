@@ -2601,10 +2601,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "41e15dbb-4d4c-424f-b205-e80144b84198",
+                "id": "3f544414-0f12-44ca-9391-a4add96e40a5",
                 "type": "text/javascript",
                 "exec": [
-                  ""
+                  "var jsonData = pm.response.json(); ",
+                  "pm.environment.set(\"Clip_Id\", jsonData.id);",
+                  "",
+                  "postman.setNextRequest(\"UpdateALocation\");"
                 ]
               }
             }
