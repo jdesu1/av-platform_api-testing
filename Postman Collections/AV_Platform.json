@@ -1739,7 +1739,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "c701175c-5c79-40ed-bcbe-f24663bb8790",
+                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
                 "type": "text/javascript",
                 "exec": [
                   "",
@@ -1802,7 +1802,6 @@
                   "pm.test(\"Content-Type is present\", function () {",
                   "    pm.response.to.have.header(\"Content-Type\");",
                   "});",
-                  "",
                   "",
                   "",
                   "pm.test(\"Response time is less than 1000ms\", function () {",
