@@ -2593,7 +2593,55 @@
       "_postman_id": "3501b49c-8221-67c4-609c-e656b5bfa2b3",
       "name": "Sequence of Tests",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "c51e84ab-f802-d16b-269f-dc8c2ff2448b",
+          "name": "Clip Record copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "41e15dbb-4d4c-424f-b205-e80144b84198",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "duration",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/clip/record",
+            "description": null
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "aa5bba17-7776-2b2b-b38a-57f1db6117cb",
