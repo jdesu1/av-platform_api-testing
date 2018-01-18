@@ -1250,7 +1250,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "63a906d3-cd41-4255-94a4-3b59840f5d47",
+                "id": "0c5f07a5-3e94-4de5-8fd3-77a7b43c3589",
                 "type": "text/javascript",
                 "exec": [
                   "",
@@ -1263,12 +1263,12 @@
                   "    pm.response.to.have.header(\"Content-Type\");",
                   "});",
                   "",
-                  "pm.test(\"Status code is 201\", function () {",
-                  "    pm.response.to.have.status(201);",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
                   "});",
                   "",
                   "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"Created\");",
+                  "    pm.response.to.have.status(\"OK\");",
                   "});",
                   "pm.test(\"Body contains Source\", function () {",
                   "    pm.expect(pm.response.text()).to.include(\"source\");",
