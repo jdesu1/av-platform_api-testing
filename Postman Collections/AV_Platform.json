@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "AV_Platform",
+    "name": "AV_Platform_Original",
     "_postman_id": "9f432786-dc44-7ecc-4c9d-1cfa421a6349",
     "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -2686,6 +2686,28 @@
         "description": null
       },
       "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "523ba301-672b-4527-aa7b-e05259793db0",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "39192672-ebd0-4f00-a0d0-fbd596bebd79",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
     }
   ]
 }
