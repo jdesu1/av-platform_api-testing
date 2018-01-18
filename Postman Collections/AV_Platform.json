@@ -949,14 +949,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "77998fde-5162-4629-8505-3cfdeaac3339",
+                "id": "a5c2ba72-39d5-4aef-9e30-338957e99a90",
                 "type": "text/javascript",
                 "exec": [
                   "",
                   "pm.test(\"Response time is less than 1000ms\", function () {",
                   "    pm.expect(pm.response.responseTime).to.be.below(1000);",
                   "});",
-                  "",
                   "",
                   "pm.test(\"Content-Type is present\", function () {",
                   "    pm.response.to.have.header(\"Content-Type\");",
@@ -1028,8 +1027,7 @@
                   "",
                   "//pm.test(\"event_log contains serial_number\", function () {",
                   "//    pm.expect(pm.response.text()).to.include(\"serial_number\");",
-                  "//});",
-                  ""
+                  "//});"
                 ]
               }
             }
