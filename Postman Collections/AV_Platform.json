@@ -784,6 +784,53 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "c293b503-1e49-c929-000b-91e761690422",
+          "name": "Clip Record copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "41e15dbb-4d4c-424f-b205-e80144b84198",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "duration",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/clip/record",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
