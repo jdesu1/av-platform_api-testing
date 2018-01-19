@@ -2480,6 +2480,18 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "c10f1d1a-7788-a543-ba0b-a57d5d23af2c",
+          "name": "Post Media URL/Upload image to AV",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {},
+            "url": "",
+            "description": "Upload image to AV"
+          },
+          "response": []
         }
       ]
     },
