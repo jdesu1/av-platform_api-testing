@@ -2445,7 +2445,20 @@
       "_postman_id": "75be4333-ff84-0576-a5f3-c56fc147c196",
       "name": "Images",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "4ffbdeed-0f0f-da0e-ab8f-29fb65ae87d7",
+          "name": "Post Image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {},
+            "url": "",
+            "description": null
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "9ad9b6f1-dfec-df3b-75ac-c77dcf9a4dd5",
