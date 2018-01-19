@@ -2495,7 +2495,7 @@
         },
         {
           "_postman_id": "ab9d089a-d3d7-6f2e-06da-fee017179041",
-          "name": "Get Image from AV",
+          "name": "Get Image from AV_MediaURL",
           "request": {
             "method": "GET",
             "header": [
