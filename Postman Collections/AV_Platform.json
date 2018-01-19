@@ -2447,18 +2447,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "4ffbdeed-0f0f-da0e-ab8f-29fb65ae87d7",
-          "name": "Post Image",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {},
-            "url": "",
-            "description": null
-          },
-          "response": []
-        },
-        {
           "_postman_id": "0218dcb0-3702-bf10-7801-aa16d99a46c6",
           "name": "Post Image",
           "request": {
