@@ -2457,6 +2457,41 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "0218dcb0-3702-bf10-7801-aa16d99a46c6",
+          "name": "Post Image",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                },
+                {
+                  "key": "start",
+                  "value": "1516322400",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/image",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
