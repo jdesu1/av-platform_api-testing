@@ -2611,7 +2611,7 @@
         },
         {
           "_postman_id": "a28dbacb-6b5f-e373-f532-44c30e93810a",
-          "name": "POST /image/record copy",
+          "name": "POST /image/record Invalid Auth",
           "request": {
             "method": "POST",
             "header": [
