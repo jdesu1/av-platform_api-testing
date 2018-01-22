@@ -2582,10 +2582,29 @@
           "_postman_id": "99945a31-26e4-4812-712e-51c91063b8fb",
           "name": "POST /image/record",
           "request": {
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "url": "",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/image/record",
             "description": null
           },
           "response": []
