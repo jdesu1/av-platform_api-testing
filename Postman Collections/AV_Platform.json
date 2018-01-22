@@ -2577,6 +2577,18 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "99945a31-26e4-4812-712e-51c91063b8fb",
+          "name": "POST /image/record",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": "",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
