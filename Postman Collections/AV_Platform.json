@@ -2620,6 +2620,18 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "6c90a635-7d4b-dfd4-d604-87d92e0c0bcc",
+          "name": "POST /image/record copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": "",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
