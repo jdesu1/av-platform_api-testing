@@ -2651,6 +2651,36 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "a28dbacb-6b5f-e373-f532-44c30e93810a",
+          "name": "POST /image/record copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/image/record",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
