@@ -2594,10 +2594,29 @@
           "_postman_id": "87c19271-769e-1785-40dc-da2e826b8665",
           "name": "POST /image/record Invalid Source",
           "request": {
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "url": "",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729197",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/image/record",
             "description": null
           },
           "response": []
