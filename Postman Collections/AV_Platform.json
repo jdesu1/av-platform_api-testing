@@ -37,7 +37,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "https://mediaserv.media11.ec2.st-av.net/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=ZLJe0t_T3dbm1bPMD1p8J",
+              "raw": "https://mediaserv.media11.ec2.st-av.net/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=wAMZB9H0owlxQo-tIyXkJ",
               "protocol": "https",
               "host": [
                 "mediaserv",
@@ -57,7 +57,7 @@
                 },
                 {
                   "key": "clip_id",
-                  "value": "ZLJe0t_T3dbm1bPMD1p8J",
+                  "value": "wAMZB9H0owlxQo-tIyXkJ",
                   "equals": true
                 }
               ]
