@@ -2929,7 +2929,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-00044672919dd6&image_id=4GqwttWT88GgABIR4zmBI",
+              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=7fYmPT8AeqmaNsSHHUGpI",
               "host": [
                 "{{Base URL}}"
               ],
@@ -2940,12 +2940,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-00044672919dd6",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
                   "equals": true
                 },
                 {
                   "key": "image_id",
-                  "value": "4GqwttWT88GgABIR4zmBI",
+                  "value": "7fYmPT8AeqmaNsSHHUGpI",
                   "equals": true
                 }
               ]
