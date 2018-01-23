@@ -503,7 +503,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=G5bv26eEh98R_-WTwZ46J",
+              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=wAMZB9H0owlxQo-tIyXkJ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -519,7 +519,7 @@
                 },
                 {
                   "key": "clip_id",
-                  "value": "G5bv26eEh98R_-WTwZ46J",
+                  "value": "wAMZB9H0owlxQo-tIyXkJ",
                   "equals": true
                 }
               ]
