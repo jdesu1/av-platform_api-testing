@@ -419,7 +419,23 @@
               }
             ],
             "body": {},
-            "url": "{{Base URL}}/v1/clips",
+            "url": {
+              "raw": "{{Base URL}}/v1/clips?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "clips"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                }
+              ]
+            },
             "description": null
           },
           "response": []
