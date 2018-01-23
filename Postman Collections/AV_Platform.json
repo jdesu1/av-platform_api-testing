@@ -2123,7 +2123,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=Vl4Bgbuiat6p8jA_7jZKS",
+              "raw": "{{Base URL}}/v1/stream?stream_id=HAxCsv8kLqh-bN1BaYivS",
               "host": [
                 "{{Base URL}}"
               ],
@@ -2134,7 +2134,7 @@
               "query": [
                 {
                   "key": "stream_id",
-                  "value": "Vl4Bgbuiat6p8jA_7jZKS",
+                  "value": "HAxCsv8kLqh-bN1BaYivS",
                   "equals": true
                 }
               ]
