@@ -2541,7 +2541,101 @@
             },
             "description": "Upload image to AV"
           },
-          "response": []
+          "response": [
+            {
+              "id": "ca807b9a-ca5c-6c64-015e-4f547665d9e4",
+              "name": "Post Media URL/Upload image to AV",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{Authentication}}",
+                    "disabled": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "image/jpeg",
+                    "disabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "file",
+                  "file": {}
+                },
+                "url": {
+                  "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=FrbpgbWuBcXpbph-LX0DI",
+                  "protocol": "https",
+                  "host": [
+                    "mediaserv",
+                    "media11",
+                    "ec2",
+                    "st-av",
+                    "net"
+                  ],
+                  "path": [
+                    "image"
+                  ],
+                  "query": [
+                    {
+                      "key": "source_id",
+                      "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                      "equals": true
+                    },
+                    {
+                      "key": "image_id",
+                      "value": "FrbpgbWuBcXpbph-LX0DI",
+                      "equals": true
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "13",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 23 Jan 2018 18:51:26 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60",
+                  "name": "Keep-Alive",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "261",
+              "body": "{\"code\": 403}"
+            }
+          ]
         },
         {
           "_postman_id": "ab9d089a-d3d7-6f2e-06da-fee017179041",
@@ -2560,7 +2654,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-926000446729196&image_id=_5zVXO7kV0m1pvEMARF",
+              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=7fYmPT8AeqmaNsSHHUGpI",
               "protocol": "https",
               "host": [
                 "mediaserv",
@@ -2575,12 +2669,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-926000446729196",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
                   "equals": true
                 },
                 {
                   "key": "image_id",
-                  "value": "_5zVXO7kV0m1pvEMARF",
+                  "value": "7fYmPT8AeqmaNsSHHUGpI",
                   "equals": true
                 }
               ]
