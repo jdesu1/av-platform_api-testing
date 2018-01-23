@@ -2241,7 +2241,7 @@
               ]
             },
             "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=-1ZuzCtrfPIw7rDIXR7H8S",
+              "raw": "{{Base URL}}/v1/stream?stream_id=-0CW-Wn2Ob9GPxVOKFFZS",
               "host": [
                 "{{Base URL}}"
               ],
@@ -2252,7 +2252,7 @@
               "query": [
                 {
                   "key": "stream_id",
-                  "value": "-1ZuzCtrfPIw7rDIXR7H8S",
+                  "value": "-0CW-Wn2Ob9GPxVOKFFZS",
                   "equals": true
                 }
               ]
@@ -2985,7 +2985,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
+              "raw": "{\n    \"name\": \"Entry Door\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
             },
             "url": {
               "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196",
@@ -3013,15 +3013,10 @@
           "name": "Delete a Zone",
           "request": {
             "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
+            "header": [],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
+              "raw": "{{Base URL}}/v1/zone?source_id=affbf27a-88f2-11e7-b5b6-48d705da022f&zone_id=PB1UP59K45HX2fYSouUbZ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3032,12 +3027,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
+                  "value": "affbf27a-88f2-11e7-b5b6-48d705da022f",
                   "equals": true
                 },
                 {
                   "key": "zone_id",
-                  "value": "PB1UP59K45HX2fYSouUbZ\n",
+                  "value": "PB1UP59K45HX2fYSouUbZ",
                   "equals": true
                 }
               ]
@@ -3063,10 +3058,10 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"Kitchen2\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
+              "raw": "{\n    \"name\": \"Kitchen\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
             },
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196&zone_id=nBB5sGShXQSSbXcmswnDZ",
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196&zone_id=PB1UP59K45HX2fYSouUbZ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3082,7 +3077,7 @@
                 },
                 {
                   "key": "zone_id",
-                  "value": "nBB5sGShXQSSbXcmswnDZ",
+                  "value": "PB1UP59K45HX2fYSouUbZ\n",
                   "equals": true
                 }
               ]
