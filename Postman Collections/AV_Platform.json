@@ -858,15 +858,31 @@
             "header": [
               {
                 "key": "authorization",
-                "value": "Bearer  NZ4dWmPpEgm5_B2haAV2T"
+                "value": "{{Authentication}}"
               },
               {
-                "key": "content-type",
+                "key": "Content-Type",
                 "value": "application/x-www-form-urlencoded"
               }
             ],
-            "body": {},
-            "url": "https://api.dev.st-av.net/v1/source",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "type",
+                  "value": "source",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/token",
             "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/source \\\n-H 'authorization: Bearer  NpfpVEbxupW9TG8ytFPPT' \\\n-H 'content-type: application/x-www-form-urlencoded'\n"
           },
           "response": []
