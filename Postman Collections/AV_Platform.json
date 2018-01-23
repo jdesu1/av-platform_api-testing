@@ -2733,9 +2733,9 @@
             ],
             "body": {},
             "url": {
-              "raw": "GET /v1/images?source_id=56f3d971-daf2-4e43-b3d4-bd3da730f8a1&max=2",
+              "raw": "{{Base URL}}/v1/images?source_id=ec31e3fa-4609-4c19-9263-000446729196",
               "host": [
-                "GET "
+                "{{Base URL}}"
               ],
               "path": [
                 "v1",
@@ -2744,12 +2744,7 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "56f3d971-daf2-4e43-b3d4-bd3da730f8a1",
-                  "equals": true
-                },
-                {
-                  "key": "max",
-                  "value": "2",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
                   "equals": true
                 }
               ]
