@@ -2549,7 +2549,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=xYRQkcdZCbLw-b5A9txpI",
+              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=_5zVXO7kV0m1pvEMARF5I",
               "protocol": "https",
               "host": [
                 "mediaserv",
@@ -2569,7 +2569,7 @@
                 },
                 {
                   "key": "image_id",
-                  "value": "xYRQkcdZCbLw-b5A9txpI",
+                  "value": "_5zVXO7kV0m1pvEMARF5I",
                   "equals": true
                 }
               ]
