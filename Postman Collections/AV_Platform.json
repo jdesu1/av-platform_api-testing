@@ -2760,7 +2760,7 @@
         },
         {
           "_postman_id": "39a9f1bf-30e6-fabf-2608-a1f1ef6f0fbb",
-          "name": "Get Images copy",
+          "name": "Get Image",
           "request": {
             "method": "GET",
             "header": [
