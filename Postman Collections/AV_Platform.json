@@ -2893,12 +2893,16 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=cHvvy33ofHAuYY7EnpnZI",
+              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=CSdHb0MST1elUa4kngs0I",
+              "protocol": "https",
               "host": [
-                "{{Base URL}}"
+                "mediaserv",
+                "media11",
+                "ec2",
+                "st-av",
+                "net"
               ],
               "path": [
-                "v1",
                 "image"
               ],
               "query": [
@@ -2909,7 +2913,7 @@
                 },
                 {
                   "key": "image_id",
-                  "value": "cHvvy33ofHAuYY7EnpnZI",
+                  "value": "CSdHb0MST1elUa4kngs0I",
                   "equals": true
                 }
               ]
@@ -2985,7 +2989,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"Entry Door\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
+              "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
             },
             "url": {
               "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196",
@@ -3013,10 +3017,15 @@
           "name": "Delete a Zone",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=affbf27a-88f2-11e7-b5b6-48d705da022f&zone_id=PB1UP59K45HX2fYSouUbZ",
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3027,12 +3036,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "affbf27a-88f2-11e7-b5b6-48d705da022f",
+                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
                   "equals": true
                 },
                 {
                   "key": "zone_id",
-                  "value": "PB1UP59K45HX2fYSouUbZ",
+                  "value": "PB1UP59K45HX2fYSouUbZ\n",
                   "equals": true
                 }
               ]
