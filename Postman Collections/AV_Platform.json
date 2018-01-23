@@ -2797,7 +2797,7 @@
         },
         {
           "_postman_id": "6cc69eb7-c640-136a-b220-a375c1955317",
-          "name": "Get Image copy",
+          "name": "Delete Image",
           "request": {
             "method": "GET",
             "header": [
