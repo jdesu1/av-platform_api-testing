@@ -2715,6 +2715,48 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "9990f9d0-9b6e-6c96-391d-873c4a5191a3",
+          "name": "Get Images",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/jpeg"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "GET /v1/images?source_id=56f3d971-daf2-4e43-b3d4-bd3da730f8a1&max=2",
+              "host": [
+                "GET "
+              ],
+              "path": [
+                "v1",
+                "images"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "56f3d971-daf2-4e43-b3d4-bd3da730f8a1",
+                  "equals": true
+                },
+                {
+                  "key": "max",
+                  "value": "2",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
