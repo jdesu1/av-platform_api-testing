@@ -2794,6 +2794,43 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "6cc69eb7-c640-136a-b220-a375c1955317",
+          "name": "Get Image copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "image/jpeg"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "image"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
