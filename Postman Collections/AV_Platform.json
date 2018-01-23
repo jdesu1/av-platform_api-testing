@@ -2893,7 +2893,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=cHvvy33ofHAuYY7EnpnZI",
               "host": [
                 "{{Base URL}}"
               ],
@@ -2905,6 +2905,11 @@
                 {
                   "key": "source_id",
                   "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                },
+                {
+                  "key": "image_id",
+                  "value": "cHvvy33ofHAuYY7EnpnZI",
                   "equals": true
                 }
               ]
