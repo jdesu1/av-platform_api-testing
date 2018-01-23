@@ -671,7 +671,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/clip_images?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "raw": "{{Base URL}}/v1/clip_images?source_id=ec31e3fa-4609-4c19-9263-4L5tYTckPELDSlYDEicwJ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -682,7 +682,7 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196\n",
+                  "value": "ec31e3fa-4609-4c19-9263-4L5tYTckPELDSlYDEicwJ\n",
                   "equals": true
                 }
               ]
