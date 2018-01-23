@@ -2799,20 +2799,21 @@
           "_postman_id": "6cc69eb7-c640-136a-b220-a375c1955317",
           "name": "Delete Image",
           "request": {
-            "method": "GET",
+            "method": "DELETE",
             "header": [
               {
                 "key": "Authorization",
                 "value": "{{Authentication}}"
               },
               {
-                "key": "Content-Type",
-                "value": "image/jpeg"
+                "key": "",
+                "value": "",
+                "disabled": true
               }
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "raw": "{{Base URL}}/v1/image?source_id=ec31e3fa-4609-4c19-9263-00044672919dd6&image_id=4GqwttWT88GgABIR4zmBI",
               "host": [
                 "{{Base URL}}"
               ],
@@ -2823,7 +2824,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "value": "ec31e3fa-4609-4c19-9263-00044672919dd6",
+                  "equals": true
+                },
+                {
+                  "key": "image_id",
+                  "value": "4GqwttWT88GgABIR4zmBI",
                   "equals": true
                 }
               ]
