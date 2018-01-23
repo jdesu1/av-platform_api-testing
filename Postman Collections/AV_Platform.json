@@ -2516,11 +2516,11 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{Authentication}}"
+                "value": "Bearer ZTHmWTZxPDO0qrvGsq-qT"
               },
               {
                 "key": "Content-Type",
-                "value": "image/jpeg"
+                "value": "application/x-www-form-urlencoded"
               }
             ],
             "body": {
@@ -2530,7 +2530,7 @@
               }
             },
             "url": {
-              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=JIiwEAsgijY4HzAAA_pkI",
+              "raw": "https://mediaserv.media11.ec2.st-av.net/image?source_id=ec31e3fa-4609-4c19-9263-000446729196&image_id=7fYmPT8AeqmaNsSHHUGpI",
               "protocol": "https",
               "host": [
                 "mediaserv",
@@ -2550,7 +2550,7 @@
                 },
                 {
                   "key": "image_id",
-                  "value": "JIiwEAsgijY4HzAAA_pkI",
+                  "value": "7fYmPT8AeqmaNsSHHUGpI",
                   "equals": true
                 }
               ]
