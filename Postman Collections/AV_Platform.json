@@ -3186,7 +3186,7 @@
         },
         {
           "_postman_id": "bce74107-2dd5-8182-9a8b-54d3af5dad69",
-          "name": "Get all zones copy",
+          "name": "Get a zone",
           "request": {
             "method": "GET",
             "header": [
