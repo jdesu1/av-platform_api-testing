@@ -3433,6 +3433,18 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "43be0aec-77d0-5517-66c2-00cdc6028d91",
+          "name": "Get a Zone_InvalidZoneId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": "",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
