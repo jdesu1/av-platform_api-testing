@@ -3471,6 +3471,46 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "6f0550c7-bb24-1bf5-5f49-f13cee08cf3e",
+          "name": "Add a Zone copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/zone?source_id={{SourceId}}",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zone"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "{{SourceId}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
