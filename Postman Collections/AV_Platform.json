@@ -3062,6 +3062,46 @@
           "response": []
         },
         {
+          "_postman_id": "7275d169-d5f9-a3be-c53f-c35279e90a6b",
+          "name": "Add a Zone copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zone"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196\n",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
           "_postman_id": "33ccd1e4-4266-6ed1-b3fb-63b50b8982ac",
           "name": "Add a Zone InvalidSourceId",
           "request": {
@@ -3261,46 +3301,6 @@
                 {
                   "key": "zone_id",
                   "value": "z4tXBRluDCkEQPGPaaQlZ",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7275d169-d5f9-a3be-c53f-c35279e90a6b",
-          "name": "Add a Zone copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
-            },
-            "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "zone"
-              ],
-              "query": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196\n",
                   "equals": true
                 }
               ]
