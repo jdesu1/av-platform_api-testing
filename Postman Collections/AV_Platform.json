@@ -172,7 +172,7 @@
         },
         {
           "_postman_id": "e21e00d3-cf0b-e287-23c2-c4afda32ac7a",
-          "name": "Clip Record copy",
+          "name": "Clip Record >120",
           "event": [
             {
               "listen": "test",
