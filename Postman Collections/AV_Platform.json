@@ -3063,7 +3063,7 @@
         },
         {
           "_postman_id": "6f0550c7-bb24-1bf5-5f49-f13cee08cf3e",
-          "name": "Add a Zone copy",
+          "name": "Add a Zone InvalidAuth",
           "request": {
             "method": "POST",
             "header": [
