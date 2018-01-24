@@ -3748,6 +3748,44 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "2b7e1e3a-6816-ba85-7073-51ac4912d8d9",
+          "name": "Delete a Zone InvalidSourceId copy",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zone"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
+                  "equals": true
+                },
+                {
+                  "key": "zone_id",
+                  "value": "PB1UP59K45HX2fYSouUbZ\n",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
