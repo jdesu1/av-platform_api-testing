@@ -3261,7 +3261,7 @@
         },
         {
           "_postman_id": "e3254feb-0213-33e1-6579-a8e037a9b9b4",
-          "name": "Delete a Zone copy",
+          "name": "Delete a Zone InvalidAuth",
           "request": {
             "method": "DELETE",
             "header": [
