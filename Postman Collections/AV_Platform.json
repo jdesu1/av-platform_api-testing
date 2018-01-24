@@ -3391,7 +3391,7 @@
         },
         {
           "_postman_id": "61923122-0b39-0770-c85e-eef445dd9174",
-          "name": "Get a zone copy",
+          "name": "Get a zone InvalidZoneId",
           "request": {
             "method": "GET",
             "header": [
