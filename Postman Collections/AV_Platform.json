@@ -3063,7 +3063,7 @@
         },
         {
           "_postman_id": "7275d169-d5f9-a3be-c53f-c35279e90a6b",
-          "name": "Add a Zone copy",
+          "name": "Add a Zone NoCoordinates",
           "request": {
             "method": "POST",
             "header": [
