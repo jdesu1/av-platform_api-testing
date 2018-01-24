@@ -3272,7 +3272,7 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-0004462919&zone_id=PB1UP59K45HX2fYSo",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3283,12 +3283,12 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
+                  "value": "ec31e3fa-4609-4c19-9263-0004462919",
                   "equals": true
                 },
                 {
                   "key": "zone_id",
-                  "value": "PB1UP59K45HX2fYSouUbZ\n",
+                  "value": "PB1UP59K45HX2fYSo",
                   "equals": true
                 }
               ]
