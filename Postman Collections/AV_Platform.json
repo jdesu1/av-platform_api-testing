@@ -3306,7 +3306,7 @@
         },
         {
           "_postman_id": "7ada2822-52cb-42d3-a6ae-f4a335f1a3dc",
-          "name": "Modify a zone copy",
+          "name": "Modify a zone InvalidAuth",
           "request": {
             "method": "PATCH",
             "header": [
