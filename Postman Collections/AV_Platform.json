@@ -3364,7 +3364,7 @@
               "raw": "{\n    \"name\": \"Kitchen\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
             },
             "url": {
-              "raw": "{{Base URL}}/v1/zones?source_id={{SourceId}}&zone_id=z4tXBRluDCkEQPGPaaQlZ",
+              "raw": "{{Base URL}}/v1/zones?source_id={{SourceId}}&zone_id=zzz",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3380,7 +3380,7 @@
                 },
                 {
                   "key": "zone_id",
-                  "value": "z4tXBRluDCkEQPGPaaQlZ",
+                  "value": "zzz",
                   "equals": true
                 }
               ]
