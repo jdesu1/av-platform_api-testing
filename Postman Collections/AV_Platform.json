@@ -3439,9 +3439,35 @@
           "name": "Get a Zone_InvalidZoneId",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
             "body": {},
-            "url": "",
+            "url": {
+              "raw": "{{Base URL}}/v1/zones?source_id={{SourceId}}&zone_id=zzz",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zones"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "{{SourceId}}",
+                  "equals": true
+                },
+                {
+                  "key": "zone_id",
+                  "value": "zzz",
+                  "equals": true
+                }
+              ]
+            },
             "description": null
           },
           "response": []
