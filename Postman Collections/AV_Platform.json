@@ -3388,6 +3388,51 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "61923122-0b39-0770-c85e-eef445dd9174",
+          "name": "Get a zone copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Kitchen\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/zones?source_id={{SourceId}}&zone_id=z4tXBRluDCkEQPGPaaQlZ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zones"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "{{SourceId}}",
+                  "equals": true
+                },
+                {
+                  "key": "zone_id",
+                  "value": "z4tXBRluDCkEQPGPaaQlZ",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
