@@ -3161,7 +3161,7 @@
               "raw": "{\n    \"name\": \"Entry Door2\",\n    \"coordinates\": [[0,0], [1,0], [0,1], [1,1]]\n}"
             },
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044672919",
+              "raw": "{{Base URL}}/v1/zone?source_id=",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3172,7 +3172,7 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-00044672919",
+                  "value": "",
                   "equals": true
                 }
               ]
