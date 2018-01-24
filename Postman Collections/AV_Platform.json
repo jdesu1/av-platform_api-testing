@@ -3511,6 +3511,51 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "41c19248-af72-c19f-d17c-dacaf95920a7",
+          "name": "Modify a zone copy",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Kitchen2\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196&zone_id=nBB5sGShXQSSbXcmswnDZ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zone"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                },
+                {
+                  "key": "zone_id",
+                  "value": "nBB5sGShXQSSbXcmswnDZ",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
