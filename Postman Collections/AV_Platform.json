@@ -3260,6 +3260,44 @@
           "response": []
         },
         {
+          "_postman_id": "e3254feb-0213-33e1-6579-a8e037a9b9b4",
+          "name": "Delete a Zone copy",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zone"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
+                  "equals": true
+                },
+                {
+                  "key": "zone_id",
+                  "value": "PB1UP59K45HX2fYSouUbZ\n",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
           "_postman_id": "d9e09932-b351-f091-7e45-5965c8a73e5b",
           "name": "Delete a Zone InvalidSourceId",
           "request": {
@@ -3774,44 +3812,6 @@
                 {
                   "key": "zone_id",
                   "value": "zzz",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e3254feb-0213-33e1-6579-a8e037a9b9b4",
-          "name": "Delete a Zone copy",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-00044629196&zone_id=PB1UP59K45HX2fYSouUbZ",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "zone"
-              ],
-              "query": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-00044629196",
-                  "equals": true
-                },
-                {
-                  "key": "zone_id",
-                  "value": "PB1UP59K45HX2fYSouUbZ\n",
                   "equals": true
                 }
               ]
