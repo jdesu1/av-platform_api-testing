@@ -3348,6 +3348,46 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "39cc6288-e754-912a-af49-10b1ad234fc0",
+          "name": "Get all zones copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Kitchen\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/zones?source_id={{SourceId}}",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "zones"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "{{SourceId}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
