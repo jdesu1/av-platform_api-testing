@@ -3312,7 +3312,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{Authentication}}"
+                "value": "Bearer abcd"
               },
               {
                 "key": "Content-Type",
@@ -3324,7 +3324,7 @@
               "raw": "{\n    \"name\": \"Kitchen2\",\n    \"coordinates\": [[14,7], [15,7], [14,8], [15,8]]\n}"
             },
             "url": {
-              "raw": "{{Base URL}}/v1/zone?source_id=ec31e3fa-4609-4c19-9263-000446729196&zone_id=nBB5sGShXQSSbXcmswnDZ",
+              "raw": "{{Base URL}}/v1/zone?source_id={{SourceId}}&zone_id=nBB5sGShXQSSbXcmswnDZ",
               "host": [
                 "{{Base URL}}"
               ],
@@ -3335,7 +3335,7 @@
               "query": [
                 {
                   "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "value": "{{SourceId}}",
                   "equals": true
                 },
                 {
