@@ -920,44 +920,6 @@
             "description": null
           },
           "response": []
-        },
-        {
-          "_postman_id": "cb73d0b7-7eeb-3d5d-128e-c393f967abfb",
-          "name": "Get a Clip ValidSourceId_InValidClipId copy",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=wAMZB9H0owlxQo-tIyXkJ",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "clip"
-              ],
-              "query": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "equals": true
-                },
-                {
-                  "key": "clip_id",
-                  "value": "wAMZB9H0owlxQo-tIyXkJ",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
         }
       ]
     },
