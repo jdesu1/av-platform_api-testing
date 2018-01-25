@@ -847,7 +847,7 @@
         },
         {
           "_postman_id": "d5378c84-cb6c-1daf-ebff-5a77e73fab24",
-          "name": "Get Clip_images InvalidSourceId",
+          "name": "Get Clip_images InvalidSourceId&ValidClipId",
           "request": {
             "method": "GET",
             "header": [
