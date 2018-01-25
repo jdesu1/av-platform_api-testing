@@ -3925,7 +3925,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{Authentication}}"
+                "value": "Bearer abcd"
               }
             ],
             "body": {},
