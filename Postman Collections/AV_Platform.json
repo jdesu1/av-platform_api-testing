@@ -510,7 +510,7 @@
         },
         {
           "_postman_id": "ea168cb6-98fe-7e53-4091-ad348cc89765",
-          "name": "Get a Clip",
+          "name": "Get a Clip ValidSourceId_ValidClipId",
           "request": {
             "method": "GET",
             "header": [
