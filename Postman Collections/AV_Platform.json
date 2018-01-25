@@ -700,7 +700,7 @@
         },
         {
           "_postman_id": "cb67aed7-3df5-597c-76b2-7dfa25612071",
-          "name": "Delete a Clip ValidSourceId_ValidClipId copy",
+          "name": "Delete a Clip ValidSourceId_InValidClipId",
           "request": {
             "method": "DELETE",
             "header": [
