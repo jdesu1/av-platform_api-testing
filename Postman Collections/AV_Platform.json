@@ -548,7 +548,7 @@
         },
         {
           "_postman_id": "9475c8cf-cb4a-3a3d-40a2-ee4356a22d7f",
-          "name": "Get a Clip copy",
+          "name": "Get a Clip InvalidSourceId_NoClipId",
           "request": {
             "method": "GET",
             "header": [
