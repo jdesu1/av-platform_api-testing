@@ -547,6 +547,44 @@
           "response": []
         },
         {
+          "_postman_id": "b8be7f3c-df2b-cf04-86d5-8152a4b4e72a",
+          "name": "Get a Clip ValidSourceId_ValidClipId copy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=wAMZB9H0owlxQo-tIyXkJ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "clip"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                },
+                {
+                  "key": "clip_id",
+                  "value": "wAMZB9H0owlxQo-tIyXkJ",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
           "_postman_id": "9475c8cf-cb4a-3a3d-40a2-ee4356a22d7f",
           "name": "Get a Clip InvalidSourceId_NoClipId",
           "request": {
@@ -875,44 +913,6 @@
                 {
                   "key": "clip_id",
                   "value": "12u4A1KDqPNPeWsV42jZJ\n",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b8be7f3c-df2b-cf04-86d5-8152a4b4e72a",
-          "name": "Get a Clip ValidSourceId_ValidClipId copy",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=wAMZB9H0owlxQo-tIyXkJ",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "clip"
-              ],
-              "query": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "equals": true
-                },
-                {
-                  "key": "clip_id",
-                  "value": "wAMZB9H0owlxQo-tIyXkJ",
                   "equals": true
                 }
               ]
