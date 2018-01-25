@@ -996,6 +996,44 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "9b133926-f6e4-fe24-9688-de71208c4272",
+          "name": "Delete a Clip ValidSourceId_InValidClipId copy",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/clip?source_id=ec31e3fa-4609-4c19-9263-000446729196&clip_id=1d6KGgbarayiMxmBr70ZJ",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "clip"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                },
+                {
+                  "key": "clip_id",
+                  "value": "1d6KGgbarayiMxmBr70ZJ\n",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
