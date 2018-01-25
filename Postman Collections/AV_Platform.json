@@ -662,7 +662,7 @@
         },
         {
           "_postman_id": "f8ada8f0-6318-2aec-2346-2e88c9dfec1b",
-          "name": "Delete a Clip",
+          "name": "Delete a Clip ValidSourceId_ValidClipId",
           "request": {
             "method": "DELETE",
             "header": [
