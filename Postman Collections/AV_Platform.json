@@ -809,7 +809,7 @@
         },
         {
           "_postman_id": "786375fe-5df8-9c17-1f52-dfbcd81dbe8a",
-          "name": "Get Clip_images InvalidSource&ClipId",
+          "name": "Get Clip_images InvalidSource&InvalidClipId",
           "request": {
             "method": "GET",
             "header": [
