@@ -4255,36 +4255,6 @@
           "response": []
         },
         {
-          "_postman_id": "c298935e-f009-9439-b84a-6fe4909a2853",
-          "name": "Retrieve a clip from AV Platform",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "cbc26176-1eba-4222-aa77-4889a7d1b989",
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": "{{ClipURL}}",
-            "description": null
-          },
-          "response": []
-        },
-        {
           "_postman_id": "2b62b0ff-fbec-c217-c99e-9a84b4ec3a76",
           "name": "Retrieve a clip from AV Platform",
           "event": [
