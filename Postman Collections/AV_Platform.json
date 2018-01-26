@@ -4261,11 +4261,21 @@
             {
               "listen": "test",
               "script": {
-                "id": "cbc26176-1eba-4222-aa77-4889a7d1b989",
+                "id": "139c7bd8-4d91-4497-86bf-8e8ddbc39429",
                 "type": "text/javascript",
                 "exec": [
                   "",
-                  ""
+                  "",
+                  "",
+                  "pm.test(\"Response time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
                 ]
               }
             }
