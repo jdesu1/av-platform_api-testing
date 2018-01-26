@@ -1034,6 +1034,53 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "db8520d6-e7fe-9b06-e463-90823e9d3f97",
+          "name": "Clip Record copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "41e15dbb-4d4c-424f-b205-e80144b84198",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "duration",
+                  "value": "20",
+                  "type": "text"
+                },
+                {
+                  "key": "source_id",
+                  "value": "{{SourceId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/clip/record",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
