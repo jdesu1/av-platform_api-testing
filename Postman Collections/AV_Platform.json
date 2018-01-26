@@ -1899,6 +1899,889 @@
       ]
     },
     {
+      "_postman_id": "11404abd-ec63-d007-b558-ca35eb0f7769",
+      "name": "Streams",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "acb98a05-e268-5e27-7a1f-4cdafee37920",
+          "name": "Get Streams",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cb56b9ae-5341-4d90-a1a5-581912dc642d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Response time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "pm.test(\"Content-Type is present\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "});",
+                  "",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Status code name has string\", function () {",
+                  "    pm.response.to.have.status(\"OK\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/streams?sourceid={{SourceId}}",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "streams"
+              ],
+              "query": [
+                {
+                  "key": "sourceid",
+                  "value": "{{SourceId}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9041f701-18d7-ee57-17cd-aa6e29e6886f",
+          "name": "Get Streams Invalid SourceId",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5445ca36-fed5-4bbb-8208-78a5d9ea242c",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "58e34f2e-ece8-4429-a1a2-e61543d2a754",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/streams?sourceid=abcd",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "streams"
+              ],
+              "query": [
+                {
+                  "key": "sourceid",
+                  "value": "abcd",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8f718ea6-bbe4-0789-7489-8e640ecca07a",
+          "name": "Get Streams InvalidAuth",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer abcd1234",
+                "disabled": true
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/streams?sourceid=ec31e3fa-4609-4c19-9263-000446729196",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "streams"
+              ],
+              "query": [
+                {
+                  "key": "sourceid",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "de32a980-4cf7-27d7-492e-64ddcbc0fe53",
+          "name": "RequestLiveStream",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "//Validating Response code",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Status code name has string\", function () {",
+                  "    pm.response.to.have.status(\"Created\");",
+                  "});",
+                  "",
+                  "//Validating Response Body fields ",
+                  "pm.test(\"Body contains source_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains stream id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains gateway_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
+                  "});",
+                  "pm.test(\"Body contains date created\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"created\");",
+                  "});",
+                  "pm.test(\"Body contains client_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
+                  "});",
+                  "pm.test(\"Body contains user_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
+                  "});",
+                  "pm.test(\"Body contains running\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"running\");",
+                  "});",
+                  "pm.test(\"Body contains modified\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
+                  "});",
+                  "pm.test(\"Body contains profile\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
+                  "});",
+                  "pm.test(\"Body contains mode\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
+                  "});",
+                  "pm.test(\"Body contains sdp\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
+                  "});",
+                  "pm.test(\"Body contains event_log\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
+                  "});",
+                  "",
+                  "pm.test(\"event_log contains ts\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
+                  "});",
+                  "pm.test(\"event_log contains name\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"name\");",
+                  "});",
+                  "",
+                  "//Validating Header",
+                  "pm.test(\"Content-Type is present\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Response time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "3ff5a075-4a20-47e3-b8a4-3dabba623651",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b8595f54-881e-0689-ff0f-bd5fe68932b4",
+          "name": "RequestLiveStream copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "//Validating Response code",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Status code name has string\", function () {",
+                  "    pm.response.to.have.status(\"Created\");",
+                  "});",
+                  "",
+                  "//Validating Response Body fields ",
+                  "pm.test(\"Body contains source_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains stream id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains gateway_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
+                  "});",
+                  "pm.test(\"Body contains date created\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"created\");",
+                  "});",
+                  "pm.test(\"Body contains client_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
+                  "});",
+                  "pm.test(\"Body contains user_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
+                  "});",
+                  "pm.test(\"Body contains running\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"running\");",
+                  "});",
+                  "pm.test(\"Body contains modified\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
+                  "});",
+                  "pm.test(\"Body contains profile\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
+                  "});",
+                  "pm.test(\"Body contains mode\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
+                  "});",
+                  "pm.test(\"Body contains sdp\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
+                  "});",
+                  "pm.test(\"Body contains event_log\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
+                  "});",
+                  "",
+                  "pm.test(\"event_log contains ts\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
+                  "});",
+                  "pm.test(\"event_log contains name\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"name\");",
+                  "});",
+                  "",
+                  "//Validating Header",
+                  "pm.test(\"Content-Type is present\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Response time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "3ff5a075-4a20-47e3-b8a4-3dabba623651",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ba4cb819-699e-0373-3f26-4afb12c85606",
+          "name": "RequestLiveStream CameraUnplugged",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7db74434-50d1-40ee-95be-605e4a34914f",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "//Validating Response code",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Status code name has string\", function () {",
+                  "    pm.response.to.have.status(\"Created\");",
+                  "});",
+                  "",
+                  "//Validating Response Body fields ",
+                  "pm.test(\"Body contains source_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains stream id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains gateway_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
+                  "});",
+                  "pm.test(\"Body contains date created\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"created\");",
+                  "});",
+                  "pm.test(\"Body contains client_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
+                  "});",
+                  "pm.test(\"Body contains user_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
+                  "});",
+                  "pm.test(\"Body contains running\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"running\");",
+                  "});",
+                  "pm.test(\"Body contains modified\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
+                  "});",
+                  "pm.test(\"Body contains profile\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
+                  "});",
+                  "pm.test(\"Body contains mode\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
+                  "});",
+                  "pm.test(\"Body contains sdp\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
+                  "});",
+                  "pm.test(\"Body contains event_log\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
+                  "});",
+                  "",
+                  "pm.test(\"event_log contains ts\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
+                  "});",
+                  "pm.test(\"event_log contains name\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"name\");",
+                  "});",
+                  "",
+                  "//Validating Header",
+                  "pm.test(\"Content-Type is present\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "});",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "74409eb3-3378-f7cc-2862-dd3e14fed268",
+          "name": "RequestLiveStream InvalidSourceId",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-92",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "10d9ec53-a6c6-b0c0-6347-2d130a14017e",
+          "name": "RequestLiveStream InvalidAuth",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "Bearer abcd123cdcvd"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9e0db2da-83cd-5955-0a1b-357ab23f8cce",
+          "name": "RequestLiveStream Missing Source id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "633948d0-9893-db99-4a41-c7c324529383",
+          "name": "Get Stream",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=HAxCsv8kLqh-bN1BaYivS",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "HAxCsv8kLqh-bN1BaYivS",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f7ddba0d-2c05-2bfd-d3ad-72cdee598c66",
+          "name": "Get Stream CameraUnplugged",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=HAxCsv8kLqh-bN1BaYivS",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "HAxCsv8kLqh-bN1BaYivS",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1997425a-541a-83d2-0b72-1dc11fb05ef7",
+          "name": "Get Stream InvalidStreamId",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=Vl4Bgbuiat6p8jA_7",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "Vl4Bgbuiat6p8jA_7",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d6cf99c4-b679-c194-619c-ce3ff2b6631d",
+          "name": "Get Stream InvalidAuth",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer abcd1234"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=rrhLE_tdtFS7xQcCnUc1S",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "rrhLE_tdtFS7xQcCnUc1S",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3c802547-a098-28e3-1c26-a9f6fc2e47cb",
+          "name": "Delete Stream",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=-1ZuzCtrfPIw7rDIXR7H8S",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "-1ZuzCtrfPIw7rDIXR7H8S",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7a248545-8572-7452-fdc7-3da5b523b93a",
+          "name": "Delete Stream Missing StreamId",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b1cff875-5cf2-6523-8a01-4eb55caf7eda",
+          "name": "Delete Stream Invalid StreamId",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=dvd",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "dvd",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ba70b184-4247-ed29-6b41-2a375550f624",
+          "name": "Delete Stream InvalidAuth",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer abcd1234"
+              },
+              {
+                "key": "",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{Base URL}}/v1/stream?stream_id=3v9Hp5ZZQN_Orb-IH9uTS",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "stream"
+              ],
+              "query": [
+                {
+                  "key": "stream_id",
+                  "value": "3v9Hp5ZZQN_Orb-IH9uTS",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "52c38617-b0a6-9d79-8141-d5906e639394",
       "name": "User",
       "description": "",
@@ -3469,998 +4352,6 @@
               ]
             },
             "description": null
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "363c5229-b041-15a2-abbb-3428f19e6e0d",
-      "name": "Streams",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "3460aecd-b92f-7d40-baf4-1ac3aa4b8eba",
-          "name": "Get Streams",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "cb56b9ae-5341-4d90-a1a5-581912dc642d",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(\"Response time is less than 1000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                  "});",
-                  "",
-                  "pm.test(\"Content-Type is present\", function () {",
-                  "    pm.response.to.have.header(\"Content-Type\");",
-                  "});",
-                  "",
-                  "pm.test(\"Status code is 200\", function () {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"OK\");",
-                  "});"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/streams?sourceid={{SourceId}}",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "streams"
-              ],
-              "query": [
-                {
-                  "key": "sourceid",
-                  "value": "{{SourceId}}",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e0cb19e7-3c7a-2513-3420-196980e912ee",
-          "name": "Get Streams Invalid SourceId",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "5445ca36-fed5-4bbb-8208-78a5d9ea242c",
-                "type": "text/javascript",
-                "exec": [
-                  ""
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "58e34f2e-ece8-4429-a1a2-e61543d2a754",
-                "type": "text/javascript",
-                "exec": [
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/streams?sourceid=abcd",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "streams"
-              ],
-              "query": [
-                {
-                  "key": "sourceid",
-                  "value": "abcd",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "643f4643-dff8-d632-de82-2d0e44e8b018",
-          "name": "Get Streams InvalidAuth",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer abcd1234",
-                "disabled": true
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/streams?sourceid=ec31e3fa-4609-4c19-9263-000446729196",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "streams"
-              ],
-              "query": [
-                {
-                  "key": "sourceid",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d40815e1-c1cf-e0ea-600d-44c16f547a3f",
-          "name": "RequestLiveStream",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "//Validating Response code",
-                  "pm.test(\"Status code is 201\", function () {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"Created\");",
-                  "});",
-                  "",
-                  "//Validating Response Body fields ",
-                  "pm.test(\"Body contains source_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains stream id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains gateway_url\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
-                  "});",
-                  "pm.test(\"Body contains date created\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"created\");",
-                  "});",
-                  "pm.test(\"Body contains client_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
-                  "});",
-                  "pm.test(\"Body contains user_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
-                  "});",
-                  "pm.test(\"Body contains running\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"running\");",
-                  "});",
-                  "pm.test(\"Body contains modified\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
-                  "});",
-                  "pm.test(\"Body contains profile\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
-                  "});",
-                  "pm.test(\"Body contains mode\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
-                  "});",
-                  "pm.test(\"Body contains sdp\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
-                  "});",
-                  "pm.test(\"Body contains event_log\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
-                  "});",
-                  "",
-                  "pm.test(\"event_log contains ts\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
-                  "});",
-                  "pm.test(\"event_log contains name\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"name\");",
-                  "});",
-                  "",
-                  "//Validating Header",
-                  "pm.test(\"Content-Type is present\", function () {",
-                  "    pm.response.to.have.header(\"Content-Type\");",
-                  "});",
-                  "",
-                  "",
-                  "pm.test(\"Response time is less than 1000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                  "});"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "3ff5a075-4a20-47e3-b8a4-3dabba623651",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "14137c50-b084-fcdd-0e79-d6b7d5f44566",
-          "name": "RequestLiveStream copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "//Validating Response code",
-                  "pm.test(\"Status code is 201\", function () {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"Created\");",
-                  "});",
-                  "",
-                  "//Validating Response Body fields ",
-                  "pm.test(\"Body contains source_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains stream id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains gateway_url\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
-                  "});",
-                  "pm.test(\"Body contains date created\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"created\");",
-                  "});",
-                  "pm.test(\"Body contains client_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
-                  "});",
-                  "pm.test(\"Body contains user_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
-                  "});",
-                  "pm.test(\"Body contains running\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"running\");",
-                  "});",
-                  "pm.test(\"Body contains modified\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
-                  "});",
-                  "pm.test(\"Body contains profile\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
-                  "});",
-                  "pm.test(\"Body contains mode\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
-                  "});",
-                  "pm.test(\"Body contains sdp\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
-                  "});",
-                  "pm.test(\"Body contains event_log\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
-                  "});",
-                  "",
-                  "pm.test(\"event_log contains ts\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
-                  "});",
-                  "pm.test(\"event_log contains name\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"name\");",
-                  "});",
-                  "",
-                  "//Validating Header",
-                  "pm.test(\"Content-Type is present\", function () {",
-                  "    pm.response.to.have.header(\"Content-Type\");",
-                  "});",
-                  "",
-                  "",
-                  "pm.test(\"Response time is less than 1000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                  "});"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "3ff5a075-4a20-47e3-b8a4-3dabba623651",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c5187c87-6a24-d201-02ac-fccbf1a19283",
-          "name": "RequestLiveStream CameraUnplugged",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "7db74434-50d1-40ee-95be-605e4a34914f",
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "//Validating Response code",
-                  "pm.test(\"Status code is 201\", function () {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"Created\");",
-                  "});",
-                  "",
-                  "//Validating Response Body fields ",
-                  "pm.test(\"Body contains source_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains stream id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains gateway_url\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
-                  "});",
-                  "pm.test(\"Body contains date created\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"created\");",
-                  "});",
-                  "pm.test(\"Body contains client_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
-                  "});",
-                  "pm.test(\"Body contains user_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
-                  "});",
-                  "pm.test(\"Body contains running\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"running\");",
-                  "});",
-                  "pm.test(\"Body contains modified\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
-                  "});",
-                  "pm.test(\"Body contains profile\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
-                  "});",
-                  "pm.test(\"Body contains mode\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
-                  "});",
-                  "pm.test(\"Body contains sdp\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
-                  "});",
-                  "pm.test(\"Body contains event_log\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
-                  "});",
-                  "",
-                  "pm.test(\"event_log contains ts\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
-                  "});",
-                  "pm.test(\"event_log contains name\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"name\");",
-                  "});",
-                  "",
-                  "//Validating Header",
-                  "pm.test(\"Content-Type is present\", function () {",
-                  "    pm.response.to.have.header(\"Content-Type\");",
-                  "});",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cac5513e-a58b-56a7-4ded-4063bc0c1fa4",
-          "name": "RequestLiveStream InvalidSourceId",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-92",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0e9d0589-2528-6f15-44c8-67e85067956b",
-          "name": "RequestLiveStream InvalidAuth",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "Bearer abcd123cdcvd"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "10f9334e-1ac6-1f61-2d67-ce093146d527",
-          "name": "RequestLiveStream Missing Source id",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "",
-                  "value": "",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "98870a08-3872-50bc-69e3-236a50c006d6",
-          "name": "Get Stream",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=HAxCsv8kLqh-bN1BaYivS",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "HAxCsv8kLqh-bN1BaYivS",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "fe2ecb6c-ff86-2a50-0ed0-79bd8ec5a418",
-          "name": "Get Stream CameraUnplugged",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=HAxCsv8kLqh-bN1BaYivS",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "HAxCsv8kLqh-bN1BaYivS",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "038feb10-8fbb-dd59-5bf8-cd6683706b33",
-          "name": "Get Stream InvalidStreamId",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=Vl4Bgbuiat6p8jA_7",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "Vl4Bgbuiat6p8jA_7",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c2ff5508-4c76-dd72-df96-09d41b26e31d",
-          "name": "Get Stream InvalidAuth",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer abcd1234"
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=rrhLE_tdtFS7xQcCnUc1S",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "rrhLE_tdtFS7xQcCnUc1S",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f2ea9388-881a-815b-ac68-3f2333ecb433",
-          "name": "Delete Stream",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              },
-              {
-                "key": "",
-                "value": "",
-                "disabled": true
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=-1ZuzCtrfPIw7rDIXR7H8S",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "-1ZuzCtrfPIw7rDIXR7H8S",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ade07e68-cc0f-acf0-a199-adac686c8c2b",
-          "name": "Delete Stream Missing StreamId",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "",
-                "value": "",
-                "disabled": true
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ae79cd61-b78e-cc2d-f959-d04361d9c88b",
-          "name": "Delete Stream Invalid StreamId",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "",
-                "value": "",
-                "disabled": true
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=dvd",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "dvd",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f39729cc-82cf-c7b5-005d-6d01f1af03af",
-          "name": "Delete Stream InvalidAuth",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer abcd1234"
-              },
-              {
-                "key": "",
-                "value": "",
-                "disabled": true
-              }
-            ],
-            "body": {},
-            "url": {
-              "raw": "{{Base URL}}/v1/stream?stream_id=3v9Hp5ZZQN_Orb-IH9uTS",
-              "host": [
-                "{{Base URL}}"
-              ],
-              "path": [
-                "v1",
-                "stream"
-              ],
-              "query": [
-                {
-                  "key": "stream_id",
-                  "value": "3v9Hp5ZZQN_Orb-IH9uTS",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "48ae4b24-bc3a-836e-d79c-353c7572a814",
-          "name": "RequestLiveStream copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "//Validating Response code",
-                  "pm.test(\"Status code is 201\", function () {",
-                  "    pm.response.to.have.status(201);",
-                  "});",
-                  "pm.test(\"Status code name has string\", function () {",
-                  "    pm.response.to.have.status(\"Created\");",
-                  "});",
-                  "",
-                  "//Validating Response Body fields ",
-                  "pm.test(\"Body contains source_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains stream id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"id\");",
-                  "});",
-                  "",
-                  "pm.test(\"Body contains gateway_url\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
-                  "});",
-                  "pm.test(\"Body contains date created\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"created\");",
-                  "});",
-                  "pm.test(\"Body contains client_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
-                  "});",
-                  "pm.test(\"Body contains user_id\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
-                  "});",
-                  "pm.test(\"Body contains running\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"running\");",
-                  "});",
-                  "pm.test(\"Body contains modified\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
-                  "});",
-                  "pm.test(\"Body contains profile\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
-                  "});",
-                  "pm.test(\"Body contains mode\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
-                  "});",
-                  "pm.test(\"Body contains sdp\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
-                  "});",
-                  "pm.test(\"Body contains event_log\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
-                  "});",
-                  "",
-                  "pm.test(\"event_log contains ts\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
-                  "});",
-                  "pm.test(\"event_log contains name\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"name\");",
-                  "});",
-                  "",
-                  "//Validating Header",
-                  "pm.test(\"Content-Type is present\", function () {",
-                  "    pm.response.to.have.header(\"Content-Type\");",
-                  "});",
-                  "",
-                  "",
-                  "pm.test(\"Response time is less than 1000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                  "});"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "cache-control",
-                "value": "no-cache"
-              },
-              {
-                "key": "content-type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "source_id",
-                  "value": "{{SourceId}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/stream",
-            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
           },
           "response": []
         }
