@@ -3079,10 +3079,10 @@
             {
               "listen": "test",
               "script": {
-                "id": "cee9d458-996b-4d2c-8409-f8660f042920",
+                "id": "34ebb2ae-479f-460c-be69-7d2140bca461",
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {",
+                  "pm.test(\"Status code is 201\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});",
                   "",
