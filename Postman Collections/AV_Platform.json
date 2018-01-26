@@ -2996,27 +2996,6 @@
           "response": []
         },
         {
-          "_postman_id": "84848b95-2384-098a-b886-fdce3bc153df",
-          "name": "Get Image from AV_MediaURL",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "image/jpeg"
-              }
-            ],
-            "body": {},
-            "url": "{{ImageURL}}",
-            "description": null
-          },
-          "response": []
-        },
-        {
           "_postman_id": "99945a31-26e4-4812-712e-51c91063b8fb",
           "name": "POST /image/record",
           "request": {
