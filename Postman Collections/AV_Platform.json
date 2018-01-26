@@ -4199,6 +4199,47 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "aa5bba17-7776-2b2b-b38a-57f1db6117cb",
+          "name": "Post motion event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": {\n        \"coordinates\": [[14,7], [14,8]],\n        \"grid\": {\n            \"width\": 9,\n            \"height\": 5\n        },\n        \n        \"start\": 1496692549\n }\n}"
+            },
+            "url": {
+              "raw": "{{Base URL}}/v1/source/motion?source_id=ec31e3fa-4609-4c19-9263-000446729196",
+              "host": [
+                "{{Base URL}}"
+              ],
+              "path": [
+                "v1",
+                "source",
+                "motion"
+              ],
+              "query": [
+                {
+                  "key": "source_id",
+                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": []
         }
       ]
     },
@@ -4295,47 +4336,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "aa5bba17-7776-2b2b-b38a-57f1db6117cb",
-      "name": "Post motion event",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Authorization",
-            "value": "{{Authentication}}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"data\": {\n        \"coordinates\": [[14,7], [14,8]],\n        \"grid\": {\n            \"width\": 9,\n            \"height\": 5\n        },\n        \n        \"start\": 1496692549\n }\n}"
-        },
-        "url": {
-          "raw": "{{Base URL}}/v1/source/motion?source_id=ec31e3fa-4609-4c19-9263-000446729196",
-          "host": [
-            "{{Base URL}}"
-          ],
-          "path": [
-            "v1",
-            "source",
-            "motion"
-          ],
-          "query": [
-            {
-              "key": "source_id",
-              "value": "ec31e3fa-4609-4c19-9263-000446729196",
-              "equals": true
-            }
-          ]
-        },
-        "description": null
-      },
-      "response": []
     }
   ],
   "event": [
