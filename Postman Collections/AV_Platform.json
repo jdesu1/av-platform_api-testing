@@ -4308,6 +4308,36 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "700ebc38-9618-28bc-c20f-a0da02bd728e",
+          "name": "Retrieve a clip from AV Platform",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cbc26176-1eba-4222-aa77-4889a7d1b989",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{Authentication}}"
+              }
+            ],
+            "body": {},
+            "url": "{{ClipURL}}",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
