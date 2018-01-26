@@ -4153,56 +4153,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "c51e84ab-f802-d16b-269f-dc8c2ff2448b",
-          "name": "Clip Record copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "3f544414-0f12-44ca-9391-a4add96e40a5",
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = pm.response.json(); ",
-                  "pm.environment.set(\"Clip_Id\", jsonData.id);",
-                  "",
-                  "postman.setNextRequest(\"UpdateALocation\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authentication}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "duration",
-                  "value": "10",
-                  "type": "text"
-                },
-                {
-                  "key": "source_id",
-                  "value": "ec31e3fa-4609-4c19-9263-000446729196",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{Base URL}}/v1/clip/record",
-            "description": null
-          },
-          "response": []
-        },
-        {
           "_postman_id": "a8a86403-41a2-e9e4-7a36-73d76ea2e7da",
           "name": "Record a clip_Duration=20 seconds",
           "event": [
