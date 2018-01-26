@@ -3075,6 +3075,25 @@
         {
           "_postman_id": "2f7b1e90-838d-c13f-ff13-7cf935f2dc16",
           "name": "POST /image/record copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cee9d458-996b-4d2c-8409-f8660f042920",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "",
+                  "var jsonData = pm.response.json(); ",
+                  "pm.environment.set(\"ClipURL\", jsonData.image.media_url);",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [
