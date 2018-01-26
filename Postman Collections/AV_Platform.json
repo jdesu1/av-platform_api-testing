@@ -172,7 +172,7 @@
         },
         {
           "_postman_id": "db8520d6-e7fe-9b06-e463-90823e9d3f97",
-          "name": "Clip Record copy",
+          "name": "Record a clip_Duration=20 seconds",
           "event": [
             {
               "listen": "test",
