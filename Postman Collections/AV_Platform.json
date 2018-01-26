@@ -2997,7 +2997,7 @@
         },
         {
           "_postman_id": "84848b95-2384-098a-b886-fdce3bc153df",
-          "name": "Get Image from AV_MediaURL copy",
+          "name": "Get Image from AV_MediaURL",
           "request": {
             "method": "GET",
             "header": [
