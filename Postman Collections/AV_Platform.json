@@ -2668,6 +2668,116 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "b8595f54-881e-0689-ff0f-bd5fe68932b4",
+          "name": "RequestLiveStream copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "72a01321-25a2-4676-be5f-bd6a1a9b7aa8",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "//Validating Response code",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Status code name has string\", function () {",
+                  "    pm.response.to.have.status(\"Created\");",
+                  "});",
+                  "",
+                  "//Validating Response Body fields ",
+                  "pm.test(\"Body contains source_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"source_id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains stream id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Body contains gateway_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"gateway_url\");",
+                  "});",
+                  "pm.test(\"Body contains date created\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"created\");",
+                  "});",
+                  "pm.test(\"Body contains client_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"client_id\");",
+                  "});",
+                  "pm.test(\"Body contains user_id\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"user_id\");",
+                  "});",
+                  "pm.test(\"Body contains running\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"running\");",
+                  "});",
+                  "pm.test(\"Body contains modified\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"modified\");",
+                  "});",
+                  "pm.test(\"Body contains profile\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"profile\");",
+                  "});",
+                  "pm.test(\"Body contains mode\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"mode\");",
+                  "});",
+                  "pm.test(\"Body contains sdp\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"sdp\");",
+                  "});",
+                  "pm.test(\"Body contains event_log\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"event_log\");",
+                  "});",
+                  "",
+                  "pm.test(\"event_log contains ts\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"ts\");",
+                  "});",
+                  "pm.test(\"event_log contains name\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"name\");",
+                  "});",
+                  "",
+                  "//Validating Header",
+                  "pm.test(\"Content-Type is present\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Response time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "{{Authentication}}"
+              },
+              {
+                "key": "cache-control",
+                "value": "no-cache"
+              },
+              {
+                "key": "content-type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "source_id",
+                  "value": "3ff5a075-4a20-47e3-b8a4-3dabba623651",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{Base URL}}/v1/stream",
+            "description": "Generated from a curl request: \ncurl -X POST \\\nhttps://api.dev.st-av.net/v1/stream \\\n-H 'authorization: Bearer <user token>' \\\n-H 'cache-control: no-cache' \\\n-H 'content-type: application/x-www-form-urlencoded' \\\n-d 'source_id=4682a548-501c-443b-aa40-a7914b330c53'"
+          },
+          "response": []
         }
       ]
     },
